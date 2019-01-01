@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
+import { userInfo } from 'os';
 
 const App = () => {
+  const profiles = [
+    { name: 'Taro', age: 10 },
+    { name: 'Hanako', age: 15 }
+  ]
   return(
-    <Cat />
-  )
-}
-
-const Cat = () => {
-  return (
     <div>
-      <h1>Meow</h1>
-      <h1>Meow</h1>
+      {
+        profiles.map((profile) => {
+          return <User name={profile.name} age={profile.age}/>
+        })
+      }
     </div>
   )
 }
+
+const User = (props) => {
+  return(
+    <div>私の名前は{props.name} 年齢は{props.age}です</div>
+  )
+}
+
+// const App = () => {
+//   return(
+//     <div>
+//       <User name={"Taro"} age={25} />
+//     </div>
+//   )
+// }
+
+// const User = (props) => {
+//   return <div>Hi, I am {props.name}, and{props.age}years old!</div>
+// }
 
 // class App extends Component {
 //   render(){
