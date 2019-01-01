@@ -1,50 +1,35 @@
-import React, { Component } from 'react';
-import { userInfo } from 'os';
+import React, {Component} from 'react';
 
-const App = () => {
-  const profiles = [
-    { name: 'Taro', age: 10 },
-    { name: 'Hanako', age: 15 }
-  ]
-  return(
-    <div>
-      {
-        profiles.map((profile) => {
-          return <User name={profile.name} age={profile.age}/>
-        })
-      }
-    </div>
-  )
+const App = () => (<Counter></Counter>)
+
+class Counter extends Component {
+  constructor(props){
+    super(props)
+    console.log(this.state)
+    this.state = {count: 0}
+  }
+
+  handlePlusButton = () => {
+    this.setState({ count: this.state.count + 1 })
+  }
+
+  handleMinusButton = () => {
+    this.setState({ count: this.state.count -1 })
+  }
+
+  render(){
+    console.log(this.state)
+    return(
+      <React.Fragment>
+      <div>
+        count: { this.state.count }
+      </div>
+      <button onClick={this.handlePlusButton}>Click +1</button>
+      <button onClick={this.handleMinusButton}>Click -1</button>
+      </React.Fragment>
+    )
+  }
 }
-
-const User = (props) => {
-  return(
-    <div>私の名前は{props.name} 年齢は{props.age}です</div>
-  )
-}
-
-// const App = () => {
-//   return(
-//     <div>
-//       <User name={"Taro"} age={25} />
-//     </div>
-//   )
-// }
-
-// const User = (props) => {
-//   return <div>Hi, I am {props.name}, and{props.age}years old!</div>
-// }
-
-// class App extends Component {
-//   render(){
-//     return (
-//       <React.Fragment>
-//         <label htmlFor="bar">bar</label>
-//         <input type="text" />
-//       </React.Fragment>
-//     )
-//   }
-// }
 
 
 export default App;
