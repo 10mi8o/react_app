@@ -12,6 +12,7 @@ import reducer from './reducers';
 import EventsIndex from './components/events_index';
 import EventsNew from './components/events_new';
 import EventsShow from './components/events_show';
+// import registerServiceWorker from './registerServiceWorker'
 
 // import * as serviceWorker from './serviceWorker';
 
